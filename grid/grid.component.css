@@ -1,0 +1,7 @@
+.logout{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-color: whitesmoke;
+    color: white;
+}

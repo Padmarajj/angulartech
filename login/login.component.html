@@ -1,0 +1,30 @@
+<app-navbar></app-navbar>
+<section class="login-block">
+    <div class="container">
+        <div class="row">
+            <div class="col login-sec">
+                <h2 class="text-center">Login Now</h2>
+                <form [formGroup]="userForm" (ngSubmit)="Submit()">
+                    <div class="form-group">
+                      <label for="email" class="text-uppercase">Email</label>
+                      <input type="email" formControlName="email" class="form-control" id="email" placeholder="email">
+                      <small *ngIf="submitted && userForm.get('email')?.hasError('required')" class="text-danger">
+                        *Email is required.
+                      </small>
+                    </div>
+                    <div class="form-group">
+                      <label for="password" class="text-uppercase">Password</label>
+                      <input class="form-control" type="password" formControlName="password" id="password" placeholder="password">
+                      <small *ngIf="submitted && userForm.get('password')?.hasError('required')" class="text-danger">
+                        *Password is required.
+                      </small>
+                      <small *ngIf="incorrectCredentials" class="text-danger">
+                        *Incorrect email or password.
+                      </small>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block mt-4 w-100">Login</button>
+                  </form>                  
+            </div>
+        </div>
+    </div>
+</section>
